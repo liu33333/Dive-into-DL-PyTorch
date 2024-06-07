@@ -21,7 +21,7 @@ import torchvision.transforms as transforms
 import torchtext
 import torchtext.vocab as Vocab
 import numpy as np
-
+import matplotlib_inline
 
 VOC_CLASSES = ['background', 'aeroplane', 'bicycle', 'bird', 'boat',
                'bottle', 'bus', 'car', 'cat', 'chair', 'cow',
@@ -46,7 +46,7 @@ def set_figsize(figsize=(3.5, 2.5)):
 
 def use_svg_display():
     """Use svg format to display plot in jupyter"""
-    display.set_matplotlib_formats('svg')
+    matplotlib_inline.backend_inline.set_matplotlib_formats('svg')
 
 def data_iter(batch_size, features, labels):
     num_examples = len(features)
